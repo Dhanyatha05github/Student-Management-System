@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+void displayStudent(char name[50], float percentage, int branch) {
+    printf("\nStudent Name: %s\n", name);
+    printf("Percentage: %.2f\n", percentage);
+    printf("Branch: ");
+    switch (branch) {
+        case 1: printf("ECE\n"); break;
+        case 2: printf("CSE\n"); break;
+        case 3: printf("EEE\n"); break;
+        case 4: printf("ISE\n"); break;
+        case 5: printf("MECH\n"); break;
+    }
+}
+
+int checkAdmission(float percentage, float cutoffPercentage) {
+    if (percentage >= cutoffPercentage) {
+        printf("Student has been admitted\n");
+        return 1;
+    } else {
+        printf("Sorry!! Student has insufficient percentage to get admission\n");
+        return 0;
+    }
+}
+
+int main() {
+    char name[50];
+    float percentage;
+    int branch, choice;
+    const float cutoffPercentage = 70.0;
+
+    do {
+        printf("Welcome To College Admission Portal\n");
+        printf("Please provide Student Details\n");
+        printf("\n1. Add Student Details\n2. Check Admission Status\n3. Exit\n");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter student's name: ");
+                scanf("%s", name);
+                printf("Enter percentage: ");
+                scanf("%f", &percentage);
+                printf("Enter branch (1-ECE, 2-CSE, 3-EEE, 4-ISE, 5-MECH): ");
+                scanf("%d", &branch);
+                break;
+            case 2:
+                displayStudent(name, percentage, branch);
+                checkAdmission(percentage, cutoffPercentage);
+                break;
+            case 3:
+                printf("Thank You\n");
+                break;
+            default:
+                printf("Invalid option. Try again.\n");
+        }
+    } while (choice != 3);
+
+    return 0;
+}
