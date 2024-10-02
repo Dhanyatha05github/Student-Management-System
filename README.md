@@ -1,0 +1,1 @@
+A Student Management System is a software that helps schools and colleges manage the entire admission process. It allows students to apply online, submit documents, and track their application status. The system makes it easier for administrators to organize student data, schedule interviews, and handle payments, all while keeping the process efficient and transparent.
